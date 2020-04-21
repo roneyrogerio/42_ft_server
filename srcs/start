@@ -1,0 +1,6 @@
+#!/bin/bash
+
+service nginx start
+service mysql start
+service php$(cat /etc/my_app/php_version)-fpm start
+sleep infinity

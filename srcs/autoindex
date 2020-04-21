@@ -1,0 +1,15 @@
+#!/bin/bash
+
+case "$1" in
+	on)
+		echo "autoindex on;" > $(cat /etc/my_app/nginx_path)/autoindex.conf
+		service nginx restart
+		;;
+	off)
+		echo "autoindex off;" > $(cat /etc/my_app/nginx_path)/autoindex.conf
+		service nginx restart
+		;;
+	*)
+	echo $"Usage: $0 {on|off}"
+	exit 1
+esac
